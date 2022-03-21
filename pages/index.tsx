@@ -1,18 +1,29 @@
 import Head from 'next/head'
-import { Login } from '../components/Login'
+import { Login } from '../components/Login';
+import {Header} from '../components/Header';
 import { useMoralis } from "react-moralis";
 export default function Home() {
   const {isAuthenticated, logout} = useMoralis();
-  if(!isAuthenticated)return <Login/>;
-  return (
-    <div className="flex min-h-screen flex-col items-center justify-center bg-black py-2 text-white">
+  if(!isAuthenticated)return (
+  <div>
       <Head>
-        <title>Metaverse Chatting App</title>
+        <title>Login</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
-      <h1>Welcome to the metaverse Chatting engine</h1>
-      <button onClick={logout}>Logout</button>
+    <Login/>
+  </div>
+  )
+  return (
+    <div className="h-screen overflow-y-scroll bg-gradient-to-b from-blue-800 to to-slate-900 overflow-hidden text-white">
+      <Head>
+        <title>ISM Project</title>
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
+      <div>
+        <div className="max-w-screen-2xl mx-auto">
+            <Header/>
+        </div>
+      </div>
     </div>
   )
 }
