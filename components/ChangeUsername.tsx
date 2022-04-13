@@ -5,7 +5,7 @@ export function ChangeUsername() {
   const setUserName = () =>{
     const userName = prompt(`Enter your new username {current: ${user?.getUsername()}}`);
     if(!userName) return;
-    setUserData({userName});
+    setUserData({username: userName});
     console.log(userName);
   }
   return (
