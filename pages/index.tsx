@@ -2,6 +2,7 @@ import Head from 'next/head'
 import { Login } from '../components/Login';
 import {Header} from '../components/Header';
 import { useMoralis } from "react-moralis";
+import Messages from '../components/Messages';
 export default function Home() {
   const {isAuthenticated, logout} = useMoralis();
   if(!isAuthenticated)return (
@@ -22,6 +23,9 @@ export default function Home() {
       <div>
         <div className="max-w-screen-2xl mx-auto">
             <Header/>
+            <hr style={{ border: "0", height: "1px", background: "#5774d4" }} />
+                
+            <Messages/>
         </div>
       </div>
     </div>
