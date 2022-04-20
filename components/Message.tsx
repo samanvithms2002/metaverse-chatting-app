@@ -2,7 +2,11 @@ import React from 'react'
 import { useMoralis } from 'react-moralis'
 import TimeAgo from 'timeago-react'
 import Avatar from './Avatar'
-function Message({ message }) {
+interface MessageProps {
+  message: any,
+}
+
+function Message({ message }:MessageProps) {
   const { user } = useMoralis()
   const isUserMessage = message.get('ethAddress') === user?.get('ethAddress')
   return (
@@ -28,7 +32,7 @@ function Message({ message }) {
         className={`text-[10px]  text-gray-400 ${
           isUserMessage && 'order-first pr-1'
         }`}
-        dateTime={message.get('createdAt')}
+        datetime={message.get('createdAt')}
       />
       <p
         className={`absolute -bottom-5 text-xs ${

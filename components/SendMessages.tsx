@@ -1,9 +1,12 @@
 import React, { useState } from 'react'
 import { useMoralis } from 'react-moralis'
-function SendMessages({ endOfMessageRef }) {
+interface SendMessagesProps {
+endOfMessageRef: any,
+}
+function SendMessages({ endOfMessageRef }:SendMessagesProps) {
   const { user, Moralis } = useMoralis()
   const [message, setMessage] = useState('')
-  const sendMessage = (e) => {
+  const sendMessage = (e:any) => {
     e.preventDefault()
     if (!message) return
     const messageToSend = Moralis.Object.extend('Message')
@@ -15,8 +18,8 @@ function SendMessages({ endOfMessageRef }) {
         ethAddress: user?.get('ethAddress'),
       })
       .then(
-        (message) => {},
-        (error) => {
+        (message:any) => {},
+        (error:any) => {
           console.log(error)
         }
       );
