@@ -17,7 +17,7 @@ export default function Home() {
   return (
     <div className="h-screen overflow-y-scroll bg-gradient-to-b from-blue-800 to to-slate-900 overflow-hidden text-white">
       <Head>
-        <title>ISM Project</title>
+        <title>TARP Project</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div>

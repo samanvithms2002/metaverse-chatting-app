@@ -7,14 +7,7 @@ export function Header() {
   return (
     <div>
       <div className="p-4 space-y-3">
-        {/* <div className="relative h-24 w-24 mx-auto hidden lg:inline-grid">
-          <Image
-            src="https://links.papareact.com/3pi"
-            layout="fill"
-            objectFit="cover"
-            className="rounded-full"
-          />
-        </div> */}
+      
         
         <div className="text-left lg:text-center">
 
